@@ -1,0 +1,45 @@
+{
+	"duration": "0.9s",
+	"height": "256px",
+	"hiddenClass": "{opacity:0;visibility:hidden;height:0;overflow:hidden;transition:opacity var(--gb-win-dur) ease,visibility 0s var(--gb-win-dur),height var(--gb-win-dur) ease}",
+	"visibleClass": "{opacity:1;visibility:visible;height:var(--gb-menu-height-1);transition-delay:0s,0s,var(--gb-win-dur)}",
+	"contList": [
+		{
+			"slug": "gb-main",
+			"name": "Main Gb",
+			"trig": "trigger-gb-main",
+			"cont": "content-gb-main",
+			"type": "checkbox"
+		},
+		{
+			"slug": "gb1",
+			"name": "GB 1",
+			"trig": "trigger-gb1",
+			"cont": "content-gb1"
+		},
+		{
+			"slug": "gb2",
+			"name": "GB 2",
+			"trig": "trigger-gb2",
+			"cont": "content-gb2"
+		},
+		{
+			"slug": "gb3",
+			"name": "GB 3",
+			"trig": "trigger-gb3",
+			"cont": "content-gb3"
+		},
+		{
+			"slug": "gb4",
+			"name": "GB 4",
+			"trig": "trigger-gb4",
+			"cont": "content-gb4"
+		},
+		{
+			"slug": "gb5",
+			"name": "GB 5",
+			"trig": "trigger-gb5",
+			"cont": "content-gb5"
+		}
+	]
+}

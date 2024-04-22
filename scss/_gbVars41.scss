@@ -1,0 +1,84 @@
+@mixin devBorder($color: red) {
+	border: 1px dashed $color;
+}
+@mixin visualShow() {
+	opacity: 1;
+	visibility: visible;
+	height: auto;
+	transition-delay: 0s, 0s, var(--gb-layer-change-dura);
+}
+@mixin visualHide() {
+	opacity: 0;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	transition: opacity var(--gb-layer-change-dura) ease,
+		visibility 0s var(--gb-layer-change-dura),
+		height var(--gb-layer-change-dura) ease;
+}
+@mixin visualShow2() {
+	display: block;
+}
+@mixin visualHide2() {
+	display: none;
+}
+@font-face {
+	font-family: 'Pokemon';
+	src: url('/fonts/pokemon-normal.woff2') format('woff2'),
+		url('/fonts/pokemon-normal.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pokemon';
+	src: url('/fonts/pokemon-italic.woff2') format('woff2'),
+		url('/fonts/pokemon-italic.woff') format('woff');
+	font-weight: 400;
+	font-style: italic;
+}
+
+// $prefix: gb4;
+// $spacing-base: 1rem;
+// $page-size: 500px;
+// $chatbox-height: 100px;
+// $offset-del: 0.1s;
+// $offset-dur: 0.4s;
+// $layer-change-dura: 0.9s;
+// $img-layer-wrapp-dura: 0.5s;
+
+:root {
+	// Spacing
+	--spacing-base: #{$spacing-base};
+	--spacing-xs: calc(var(--spacing-base) / 4);
+	--spacing-sm: calc(var(--spacing-base) / 2);
+	--spacing-lg: calc(var(--spacing-base) * 1.5);
+	--spacing-xl: calc(var(--spacing-base) * 2);
+	--spacing: var(--spacing-base);
+	// Game Boy
+
+	// Window
+	--gb-win-width: #{$page-size};
+	--gb-win-height: #{$page-size};
+	--gb-offset-h: #{$chatbox-height};
+	--gb-offset-del: #{$offset-del};
+	--gb-offset-dur: #{$offset-dur};
+	--gb-img-frame-w: calc(#{$page-size} * 0.45);
+	// Layers Info/Image
+	--gb-layer-change-dura: #{$layer-change-dura};
+	--gb-img-layer-wrapp-dura: #{$img-layer-wrapp-dura};
+	--gb-img-layer-wrapp-w: calc(#{$page-size} * 0.4);
+	--gb-info-frame-w: calc(#{$page-size} * 0.4);
+	--gb-img-layer-wrapp-delay: 0s;
+	--gb-win-offset-y: 0px;
+	// Colors
+	--gb-bg-base: #ad9d42;
+	--gb-bg-contrast: #252f0f;
+	--gb-bg-seondary: #979797;
+	--gb-text-disabled: #3e4b23;
+	--gb-text-contrast: #252f0f;
+	--gb-text-secondary: #585a26;
+	--gb-text-base: #303c17;
+	--gb-body-bg-color: var(--gb-bg-base);
+	--gb-body-color: var(--gb-text-base);
+}

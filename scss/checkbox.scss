@@ -1,0 +1,47 @@
+$inputToggleClassNames: (
+	'trigger-block-main' 'content-block-main' 'true',
+	'trigger-block1' 'content-block1',
+	'trigger-block2' 'content-block2',
+	'trigger-block3' 'content-block3',
+	'trigger-block4' 'content-block4',
+	'trigger-block5' 'content-block5'
+);
+$duration: 0.9s;
+$height: 100px;
+
+:root {
+	--gb-win-dur: #{$duration};
+	--gb-menu-height-1: #{$height};
+	--gb-level-1: #{$height};
+}
+
+@mixin contHeight($typeCheckbox: false) {
+	@if $typeCheckbox {
+		min-height: $height;
+		height: var(--gb-level-1);
+	} @else {
+		min-height: $height;
+		height: var(--gb-level-1);
+	}
+}
+@each $triggerClassName, $contentClassName,
+	$typeCheckbox in $inputToggleClassNames
+{
+	.#{$triggerClassName} ~ .#{$contentClassName} {
+		// position: relative;
+		opacity: 0;
+		visibility: hidden;
+		height: 0px;
+		overflow: hidden;
+		transition: opacity var(--gb-win-dur) ease, visibility 0s var(--gb-win-dur),
+			height var(--gb-win-dur) ease;
+	}
+
+	.#{$triggerClassName}:checked ~ .#{$contentClassName} {
+		opacity: 1;
+		visibility: visible;
+		// @include contHeight($typeCheckbox);
+		height: auto;
+		transition-delay: 0s, 0s, var(--gb-win-dur);
+	}
+}

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nwp-header {
+	@apply py-8 space-y-4;
+}
+.nwp-header h1 {
+	@apply text-5xl font-bold;
+}
+.nwp-header h4 {
+	@apply text-2xl italic text-neutral-500;
+}
+.nwp-header h3 {
+	@apply text-3xl font-bold;
+}
+.nwp-header h5 {
+	@apply text-xl italic text-neutral-500;
+}
+
+.pkmn-ctrl {
+	@apply grid gap-1 text-xs;
+}
+
+.pkmn-ctrl label {
+	@apply flex items-center justify-between gap-4 cursor-pointer;
+}

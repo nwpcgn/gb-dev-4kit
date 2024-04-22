@@ -1,0 +1,81 @@
+// input-texts,texts,checkbox
+// input-menu,menu,checkbox
+// input-fight,fight,radio
+// input-item,item,radio
+// input-pkmn,pkmn,radio
+// input-fight-details,fight-details,checkbox
+$inputToggleClassNamesX: (
+	'input-texts' 'texts' 'true',
+	'input-menu' 'menu' 'true',
+	'input-fight' 'fight',
+	'input-item' 'item',
+	'input-pkmn' 'pkmn',
+	'input-fight-details' 'fight-details'
+);
+$duration: 0.9s;
+$height: 256px;
+
+:root {
+	--gb-win-dur: #{$duration};
+	--gb-menu-height-1: #{$height};
+}
+
+@mixin contHeight($typeCheckbox: false) {
+	@if $typeCheckbox {
+		min-height: calc($height / 4);
+		height: auto;
+	} @else {
+		min-height: $height;
+		height: auto;
+	}
+}
+
+@mixin contHeightX($typeCheckbox: false) {
+	@if $typeCheckbox {
+		opacity: 0;
+		visibility: hidden;
+		height: 0px;
+		overflow: hidden;
+		transition: opacity var(--gb-win-dur) ease, visibility 0s var(--gb-win-dur),
+			height var(--gb-win-dur) ease;
+		pointer-events: none;
+	} @else {
+		--gb-win-offset-y: 0px;
+	}
+}
+
+@mixin contHeightY($typeCheckbox: false) {
+	@if $typeCheckbox {
+		opacity: 1;
+		visibility: visible;
+		@include contHeight($typeCheckbox);
+		transition-delay: 0s, 0s, var(--gb-win-dur);
+		pointer-events: all;
+	} @else {
+		--gb-win-offset-y: var(--gb-level-1);
+	}
+}
+
+@each $triggerClassName, $contentClassName,
+	$typeCheckbox in $inputToggleClassNamesX
+{
+	.#{$triggerClassName} {
+		~ .#{$contentClassName} {
+			opacity: 0;
+			visibility: hidden;
+			height: 0;
+			overflow: hidden;
+			transition: opacity var(--gb-win-dur) ease,
+				visibility 0s var(--gb-win-dur), height var(--gb-win-dur) ease;
+		}
+
+		&:checked {
+			~ .#{$contentClassName} {
+				opacity: 1;
+				visibility: visible;
+				height: auto;
+				transition-delay: 0s, 0s, var(--gb-win-dur);
+			}
+		}
+	}
+}
