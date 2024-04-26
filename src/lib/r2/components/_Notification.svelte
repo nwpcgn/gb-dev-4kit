@@ -22,13 +22,7 @@
 </script>
 
 {#if $isOpen}
-	<div class="toast toast-top toast-end">
-		{#each payloadsToShow as p, notificationIndex (p)}
-			<svelte:component
-				this={p.component}
-				{...p.props}
-				{notificationIndex}
-				{removeNotification} />
-		{/each}
-	</div>
+	{#each payloadsToShow as p, notificationIndex (p)}
+		<svelte:component this={p.component} {...p.props} {notificationIndex} />
+	{/each}
 {/if}

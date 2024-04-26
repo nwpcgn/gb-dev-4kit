@@ -1,3 +1,26 @@
+<symbol id="ball_empty" viewBox="0 0 7 7" xmlns="http://www.w3.org/2000/svg">
+	<path
+		d="M0 2h1v3H0V2zm6 0h1v3H6V2zM2 0h3v1H2V0zm0 6h3v1H2V6zM1 5h1v1H1V5zm0-4h1v1H1V1zm4 0h1v1H5V1zm0 4h1v1H5V5z"
+		fill="#2f3622"
+		class="gb-dark__ball_empty"
+		fill-rule="evenodd" />
+</symbol>
+<symbol id="ball_full" viewBox="0 0 7 7" xmlns="http://www.w3.org/2000/svg">
+	<g fill="none" fill-rule="evenodd">
+		<path
+			d="M0 2h1v3H0V2zm6 0h1v3H6V2zM2 0h3v1H2V0zm0 6h3v1H2V6zM1 5h1v1H1V5zm0-4h1v1H1V1zm4 0h1v1H5V1zm0 4h1v1H5V5z"
+			fill="#2f3622"
+			class="gb-dark__ball_full" />
+		<path
+			d="M1 4h5v1H1V4zm1 1h3v1H2V5z"
+			fill="#7d7f4c"
+			class="gb-light__ball_full" />
+		<path
+			d="M2 1h3v1H2V1zm1 1h3v1H3V2zM1 3h5v1H1V3zm0-1h1v1H1V2z"
+			fill="#4d5d31"
+			class="gb-normal__ball_full" />
+	</g>
+</symbol>
 <symbol id="blue_front" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
 	<g fill="none" fill-rule="evenodd">
 		<path

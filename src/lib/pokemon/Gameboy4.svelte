@@ -1,6 +1,6 @@
 <script>
 	// import { onMount, tick } from 'svelte'
-	import {fly} from 'svelte/transition'
+	import { fly } from 'svelte/transition'
 	import { quartOut } from 'svelte/easing'
 	import { sleep } from '../'
 	import { text1, text2, oppHp, playHp } from './'
@@ -117,7 +117,14 @@
 				}} />
 		</label>
 		{#if showMenu}
-			<nav class="pkmn-ctrl" transition:fly={{duration: 400, x: 200, easing: quartOut, delay: 200}}>
+			<nav
+				class="pkmn-ctrl"
+				transition:fly={{
+					duration: 400,
+					x: 200,
+					easing: quartOut,
+					delay: 200
+				}}>
 				<label for="activeSubMenuFight">
 					<span>Fight Menu</span>
 					<input
